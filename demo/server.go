@@ -32,7 +32,8 @@ func CallRequest() func(http.ResponseWriter, *http.Request) {
 			nextWed := tu.NextWeekday(time.Wednesday)
 			d := twiml.Say{
 				Language: "en",
-				Text:     fmt.Sprintf("Hello, you have an appointment coming up on Wednesday %s %s", nextWed.Month(), tu.DayofmonthToEnglish(uint16(nextWed.Day()))),
+				Text: fmt.Sprintf("Hello, you have an appointment coming up on Wednesday %s %s",
+					nextWed.Month(), tu.DayofmonthToEnglish(uint16(nextWed.Day()))),
 			}
 			// Add the verb to the response
 			res.Add(&d)
