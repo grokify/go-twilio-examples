@@ -38,6 +38,20 @@ func CallRequest() func(http.ResponseWriter, *http.Request) {
 			// Add the verb to the response
 			res.Add(&d)
 
+			c := twiml.Say{
+				Language: "en",
+				Text:     "Please press 1 or say confirm to confirm. Press 2 or say cancel to cancel. Press 3 or say reschedule to reschedule.",
+			}
+			res.Add(&c)
+
+			// https://www.twilio.com/docs/voice/twiml/gather
+			// https://github.com/BTBurke/twiml/blob/17fee1f07bf2c41d244d235c53db21cf610aa8a1/vocabulary.go
+			g := twiml.Gather{
+				Input:     "speech dtmf",
+				Timeout:   3,
+				NumDigits: 1}
+			res.Add(&g)
+
 			// Validate and encode the response.  Validation is done
 			// automatically before the response is encoded.
 			b, err := res.Encode()
