@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/grokify/go-appointment-reminder-demo/demo"
+	"github.com/grokify/go-appointment-reminder-demo/server/controllers"
 	"github.com/grokify/gotilla/config"
 	"github.com/grokify/gotilla/fmt/fmtutil"
 	om "github.com/grokify/oauth2more"
@@ -34,7 +35,9 @@ func call(opts demo.Options) {
 }
 
 func serve(opts demo.Options) {
-	http.HandleFunc("/twiml", demo.CallRequest())
+	http.HandleFunc("/", controllers.CallRequest())
+	http.HandleFunc("/twiml", controllers.CallRequest())
+	http.HandleFunc("/menu1", controllers.Menu1())
 
 	portStr := ":" + DefaultPort
 	if len(os.Getenv("PORT")) > 0 {
