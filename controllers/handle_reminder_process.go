@@ -25,8 +25,7 @@ func HandleReminderProcess() func(http.ResponseWriter, *http.Request) {
 		// Create a new response container
 		res := twiml.NewResponse()
 
-		evt.Digits = strings.TrimSpace(evt.Digits)
-		switch evt.Digits {
+		switch strings.TrimSpace(evt.Digits) {
 		case "1":
 			res.Add(&twiml.Say{
 				Language: "en",
