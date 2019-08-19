@@ -19,7 +19,7 @@ func addMainMenu(res *twiml.Response) {
 		Children: []twiml.Markup{
 			&twiml.Say{
 				Language: "en",
-				Text:     "Please press 1 to confirm. Press 2 to reschedule. Press 3 to cancel.",
+				Text:     "Please press 1 to confirm. 2 to reschedule. or 3 to cancel.",
 			},
 		},
 	})
