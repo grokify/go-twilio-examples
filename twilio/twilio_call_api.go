@@ -3,9 +3,9 @@ package twilio
 import (
 	"fmt"
 	"net/http"
-	"net/url"
 	"strings"
 
+	"github.com/google/go-querystring/query"
 	hum "github.com/grokify/gotilla/net/httputilmore"
 )
 
@@ -18,27 +18,25 @@ func BuildTwilioCallURL(accountSid string) string {
 }
 
 type TwilioCallsOpts struct {
-	To          string
-	From        string
-	CallbackURL string
+	To          string `url:"To"`
+	From        string `url:"From"`
+	CallbackURL string `url:"Url"`
 }
 
-func (opts *TwilioCallsOpts) String() string {
-	v := url.Values{}
-	v.Set("To", opts.To)
-	v.Set("From", opts.From)
-	v.Set("Url", opts.CallbackURL)
+func (opts *TwilioCallsOpts) MustString() string {
+	v, err := query.Values(opts)
+	if err != nil {
+		panic(err)
+	}
 	return v.Encode()
 }
 
 func (opts *TwilioCallsOpts) StringsReader() *strings.Reader {
-	return strings.NewReader(opts.String())
+	return strings.NewReader(opts.MustString())
 }
 
 func MakeCall(client *http.Client, apiUrl string, opts TwilioCallsOpts) (*http.Response, error) {
-	rb := opts.StringsReader()
-	fmt.Println(opts.String())
-	req, err := http.NewRequest(http.MethodPost, apiUrl, rb)
+	req, err := http.NewRequest(http.MethodPost, apiUrl, opts.StringsReader())
 	if err != nil {
 		return nil, err
 	}

@@ -30,14 +30,14 @@ func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response
 	// automatically before the response is encoded.
 	b, err := res.Encode()
 	if err != nil {
-		log.Warn("C3_InProgress_Error_Encode")
+		log.Warn("C3_InProgress_Error_Encode [502]")
 		http.Error(w, http.StatusText(502), 502)
 		return
 	}
 
 	// Write the XML response to the http.ReponseWriter
 	if _, err := w.Write(b); err != nil {
-		log.Warn("C3_InProgress_Error_Write")
+		log.Warn("C3_InProgress_Error_Write [502]")
 		http.Error(w, http.StatusText(502), 502)
 		return
 	}
