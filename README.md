@@ -35,3 +35,25 @@ Of note, configure the `TWILIO_DEMO_CALLBACKURL` to be your hostname plus the ca
 ```
 TWILIO_DEMO_CALLBACKURL=https://12345678.ngrok.io/reminder_start
 ```
+
+Once `.env` is configured, simply run the demo script:
+
+```
+$ cd twilio-appointment-reminder-demo
+$ cd examples/call
+$ go run main.go
+```
+
+You will receive a call on your `TWILIO_DEMO_TO` number and see debug output like the following.
+
+```
+{
+  "Sid": "MySID",
+  "Token": "MyToken",
+  "To": "+14155550100",
+  "From": "+16505550100",
+  "Log": "+16505550100",
+  "CallbackURL": "https://12345678.ngrok.io/reminder_start"
+}
+Called with status [201]
+```
