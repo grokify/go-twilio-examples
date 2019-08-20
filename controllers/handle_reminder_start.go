@@ -39,9 +39,8 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 					nextWed.Month(), tu.DayofmonthToEnglish(uint16(nextWed.Day()))),
 			}
 			res.Add(&d)
-			addMainMenu(res)
+			addMainMenu(res, uint16(0))
 			processResponse(w, r, res)
-
 		// Call is ringing but has not been connected yet, tell Twilio to continue
 		case twiml.Ringing:
 			w.WriteHeader(200)
