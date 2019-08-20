@@ -32,10 +32,11 @@ func HandleReminderMenu() func(http.ResponseWriter, *http.Request) {
 		res := twiml.NewResponse()
 
 		if numTries > AppRetryLimit {
-			res.Add(&twiml.Say{
-				Language: "en",
-				Text:     "If you would like to change your appointment, please call our offices. Good bye."})
-			res.Add(&twiml.Hangup{})
+			res.Add(
+				&twiml.Say{
+					Language: "en",
+					Text:     "If you would like to change your appointment, please call our offices. Good bye."},
+				&twiml.Hangup{})
 			processResponse(w, r, res)
 		} else {
 			addMainMenu(res, uint16(numTries+1))

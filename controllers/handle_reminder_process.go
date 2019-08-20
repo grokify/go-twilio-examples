@@ -59,10 +59,11 @@ func HandleReminderProcess() func(http.ResponseWriter, *http.Request) {
 			processResponse(w, r, res)
 		default:
 			if numTries > AppRetryLimit {
-				res.Add(&twiml.Say{
-					Language: "en",
-					Text:     "You have reached the maximum number of retries allowed. Please hang up and call our office if you have any questions on your appointment."})
-				res.Add(&twiml.Hangup{})
+				res.Add(
+					&twiml.Say{
+						Language: "en",
+						Text:     "You have reached the maximum number of retries allowed. Please hang up and call our office if you have any questions on your appointment."},
+					&twiml.Hangup{})
 				processResponse(w, r, res)
 			} else {
 				res.Add(&twiml.Say{
