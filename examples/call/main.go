@@ -15,10 +15,10 @@ import (
 type CallOptions struct {
 	Sid         string `short:"u" long:"username" description:"A site" required:"false"`
 	Token       string `short:"p" long:"password" description:"A token" required:"false"`
-	To          string `short:"t" long:"to" description:"An object" required:"false"`
-	From        string `short:"f" long:"from" description:"An object" required:"false"`
-	Log         string `short:"l" long:"log" description:"An action (create|update|delete)" required:"false"`
-	CallbackURL string `short:"c" long:"callbackurl" description:"An action (create|update|delete)" required:"false"`
+	To          string `short:"t" long:"to" description:"A phone number" required:"false"`
+	From        string `short:"f" long:"from" description:"A phone number" required:"false"`
+	Log         string `short:"l" long:"log" description:"A phone number" required:"false"`
+	CallbackURL string `short:"c" long:"callbackurl" description:"Twiml callback URL" required:"false"`
 }
 
 func main() {
