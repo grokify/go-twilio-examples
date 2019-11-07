@@ -1,0 +1,46 @@
+package controllers
+
+import (
+	"net/http"
+	"strconv"
+	"strings"
+
+	"github.com/BTBurke/twiml"
+	log "github.com/sirupsen/logrus"
+)
+
+// https://www.twilio.com/docs/voice/twiml/gather
+// https://www.twilio.com/blog/2014/10/making-and-receiving-phone-calls-with-golang.html
+// CallRequest will return XML to connect to the forwarding number
+func HandleReminderMenu() func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		qry := r.URL.Query()
+		numTries := 0
+		numTriesRaw := strings.TrimSpace(qry.Get("numTries"))
+		if len(numTriesRaw) > 0 {
+			numTriesTry, err := strconv.Atoi(numTriesRaw)
+			if err == nil {
+				numTries = numTriesTry
+			}
+		}
+		log.WithFields(log.Fields{
+			"requestUri":     r.URL.RequestURI(),
+			"numTriesParsed": strconv.Itoa(numTries),
+		}).Info("Handle_Reminder_Process")
+
+		// Create a new response container
+		res := twiml.NewResponse()
+
+		if numTries > AppRetryLimit {
+			res.Add(
+				&twiml.Say{
+					Language: "en",
+					Text:     "If you would like to change your appointment, please call our offices. Good bye."},
+				&twiml.Hangup{})
+			processResponse(w, r, res)
+		} else {
+			addMainMenu(res, uint16(numTries+1))
+			processResponse(w, r, res)
+		}
+	}
+}

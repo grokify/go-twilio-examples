@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/BTBurke/twiml"
@@ -9,20 +10,32 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func addMainMenu(res *twiml.Response) {
-	res.Add(&twiml.Gather{
-		Action:      "/reminder_process",
-		FinishOnKey: "#",
-		Input:       "speech dtmf",
-		Timeout:     3,
-		NumDigits:   1,
-		Children: []twiml.Markup{
-			&twiml.Say{
-				Language: "en",
-				Text:     "Please press 1 to confirm. Press 2 to reschedule. Press 3 to cancel.",
+const AppRetryLimit int = 2
+
+func addMainMenu(res *twiml.Response, numTries uint16) {
+	res.Add(
+		&twiml.Gather{
+			Action:      "/reminder_process?numTries=" + strconv.Itoa(int(numTries)),
+			FinishOnKey: "#",
+			Input:       "speech dtmf",
+			Timeout:     3,
+			NumDigits:   1,
+			Children: []twiml.Markup{
+				&twiml.Say{
+					Language: "en",
+					Text:     "Please press 1 to confirm. 2 to reschedule. or 3 to cancel.",
+				},
 			},
 		},
-	})
+		&twiml.Say{
+			Language: "en",
+			Text:     "I didn't receive an answer.",
+		},
+		&twiml.Redirect{
+			Method: http.MethodPost,
+			URL:    "/reminder_menu?numTries=" + strconv.Itoa(int(numTries)+AppRetryLimit),
+		},
+	)
 }
 
 func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response) {
