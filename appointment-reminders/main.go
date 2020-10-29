@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/grokify/go-appointment-reminder-demo/controllers"
+	"github.com/grokify/go-twilio-examples/appointment-reminders/controllers"
 )
 
 const DefaultPort string = "8081"

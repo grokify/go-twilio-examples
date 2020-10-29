@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/grokify/go-appointment-reminder-demo/twilio"
+	"github.com/grokify/go-twilio-examples/twilio"
 	"github.com/grokify/gotilla/config"
 	"github.com/grokify/gotilla/fmt/fmtutil"
 	om "github.com/grokify/oauth2more"

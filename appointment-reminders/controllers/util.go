@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/BTBurke/twiml"
-	hum "github.com/grokify/gotilla/net/httputilmore"
+	"github.com/grokify/gotilla/net/httputilmore"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -54,7 +54,9 @@ func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response
 		http.Error(w, http.StatusText(502), 502)
 		return
 	}
-	w.Header().Set(hum.HeaderContentType, hum.ContentTypeAppXmlUtf8)
+	w.Header().Set(
+		httputilmore.HeaderContentType,
+		httputilmore.ContentTypeAppXmlUtf8)
 	w.WriteHeader(200)
 	log.Info("C3_Success")
 	return

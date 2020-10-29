@@ -6,8 +6,9 @@ import (
 	"time"
 
 	"github.com/BTBurke/twiml"
-	hum "github.com/grokify/gotilla/net/httputilmore"
-	tu "github.com/grokify/gotilla/time/timeutil"
+	"github.com/grokify/gotilla/net/httputilmore"
+	"github.com/grokify/gotilla/time/month"
+	"github.com/grokify/gotilla/time/timeutil"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -32,11 +33,11 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 		// Call is already in progress, tell Twilio to continue
 		case twiml.InProgress:
 			log.Info("C1_InProgress")
-			nextWed := tu.NextWeekday(time.Wednesday)
+			nextWed := timeutil.NextWeekday(time.Wednesday)
 			res.Add(&twiml.Say{
 				Language: "en",
 				Text: fmt.Sprintf("Hello, you have an appointment coming up on Wednesday %s %s",
-					nextWed.Month(), tu.DayofmonthToEnglish(uint16(nextWed.Day()))),
+					nextWed.Month(), month.DayofmonthToEnglish(uint16(nextWed.Day()))),
 			})
 			addMainMenu(res, uint16(0))
 			processResponse(w, r, res)
@@ -60,7 +61,9 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 				http.Error(w, http.StatusText(502), 502)
 				return
 			}
-			w.Header().Set(hum.HeaderContentType, hum.ContentTypeAppXmlUtf8)
+			w.Header().Set(
+				httputilmore.HeaderContentType,
+				httputilmore.ContentTypeAppXmlUtf8)
 			w.WriteHeader(200)
 			return
 		}

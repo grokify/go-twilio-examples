@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/BTBurke/twiml"
-	"github.com/grokify/go-appointment-reminder-demo/twilio"
+	"github.com/grokify/go-twilio-examples/twilio"
 	"github.com/grokify/gotilla/fmt/fmtutil"
 	log "github.com/sirupsen/logrus"
 )

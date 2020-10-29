@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/google/go-querystring/query"
-	hum "github.com/grokify/gotilla/net/httputilmore"
+	"github.com/grokify/gotilla/net/httputilmore"
 )
 
 const (
@@ -40,6 +40,8 @@ func MakeCall(client *http.Client, apiUrl string, opts TwilioCallsOpts) (*http.R
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Add(hum.HeaderContentType, hum.ContentTypeAppFormUrlEncoded)
+	req.Header.Add(
+		httputilmore.HeaderContentType,
+		httputilmore.ContentTypeAppFormUrlEncoded)
 	return client.Do(req)
 }
