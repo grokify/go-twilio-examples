@@ -1,4 +1,4 @@
-module grokify/go-twilio-examples
+module github.com/grokify/go-twilio-examples
 
 go 1.15
 
