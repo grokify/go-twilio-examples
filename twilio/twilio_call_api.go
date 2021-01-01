@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/google/go-querystring/query"
-	"github.com/grokify/gotilla/net/httputilmore"
+	"github.com/grokify/simplego/net/httputilmore"
 )
 
 const (

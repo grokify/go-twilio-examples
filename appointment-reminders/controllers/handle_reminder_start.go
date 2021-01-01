@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/BTBurke/twiml"
-	"github.com/grokify/gotilla/net/httputilmore"
-	"github.com/grokify/gotilla/time/month"
-	"github.com/grokify/gotilla/time/timeutil"
+	"github.com/grokify/simplego/net/httputilmore"
+	"github.com/grokify/simplego/time/month"
+	"github.com/grokify/simplego/time/timeutil"
 	log "github.com/sirupsen/logrus"
 )
 
