@@ -6,7 +6,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"strconv"
+	"strings"
+	"time"
 
 	"github.com/gorilla/websocket"
 	"github.com/grokify/simplego/audio/ulaw"
@@ -26,19 +27,16 @@ func HandleMediaStream(w http.ResponseWriter, r *http.Request) {
 		log.Warn().Err(err).Msg("upgrade_to_wss")
 		return
 	}
-
 	defer utility.SafeClose(c)
 
-	inboundBytes := []byte{}
-
 	streamSid := ""
+	inboundBytes := []byte{}
 
 	loop := true
 	for loop == true {
 		_, messageBytes, err := c.ReadMessage()
 		utility.PanicIfErr(err)
-		log.Info().Str("body", string(messageBytes)).
-			Msg("inbound-wss-message")
+		log.Info().Str("body", string(messageBytes)).Msg("inbound-wss-message")
 
 		msg := twilio.StreamMessage{}
 		err = json.Unmarshal(messageBytes, &msg)
@@ -49,7 +47,7 @@ func HandleMediaStream(w http.ResponseWriter, r *http.Request) {
 			log.Debug().Str("protocol", msg.Protocol).Str("version", msg.Version).
 				Msg("stream.event.connect received")
 		case twilio.EventStart:
-			streamSid = msg.StreamSid
+			streamSid = strings.TrimSpace(msg.StreamSid)
 			log.Debug().Str("message", fmt.Sprintf("%#v", msg.Start)).
 				Msg("stream.event.start received")
 		case twilio.EventMedia:
@@ -71,7 +69,7 @@ func HandleMediaStream(w http.ResponseWriter, r *http.Request) {
 
 func WriteFiles(streamSid string, inboundBytes []byte) {
 	if len(streamSid) > 0 && len(inboundBytes) > 0 {
-		filebase := "media_" + strconv.Itoa(int(timeutil.Dt14Now())) + "_" + streamSid
+		filebase := "media_" + time.Now().UTC().Format(timeutil.DT14) + "_" + streamSid
 		err := ioutil.WriteFile(filebase+".ulaw", inboundBytes, 0644)
 		utility.PanicIfErr(err)
 		err = ulaw.WriteFileWavFromUlaw(filebase+".wav", inboundBytes)
