@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/grokify/go-twilio-examples/twilio"
+	"github.com/grokify/go-twilio-examples"
 	om "github.com/grokify/oauth2more"
 	"github.com/grokify/simplego/config"
 	"github.com/grokify/simplego/fmt/fmtutil"

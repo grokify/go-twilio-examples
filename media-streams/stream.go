@@ -14,8 +14,8 @@ import (
 	"github.com/grokify/simplego/time/timeutil"
 	"github.com/rs/zerolog/log"
 
+	"github.com/grokify/go-twilio-examples"
 	"github.com/grokify/go-twilio-examples/media-streams/utility"
-	"github.com/grokify/go-twilio-examples/twilio"
 )
 
 // HandleMediaStream will upgrade connection to websocket and save the audio to file

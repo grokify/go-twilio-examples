@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/grokify/go-twilio-examples/twilio"
+	"github.com/grokify/go-twilio-examples"
 	"github.com/grokify/simplego/fmt/fmtutil"
 	"github.com/grokify/twiml"
 	"github.com/rs/zerolog/log"
