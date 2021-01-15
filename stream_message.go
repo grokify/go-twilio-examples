@@ -5,29 +5,26 @@ const (
 	EventStart     = "start"
 	EventMedia     = "media"
 	EventStop      = "stop"
+	EventMark      = "mark"
 )
 
 // StreamMessage is defined in
 // https://www.twilio.com/docs/voice/twiml/stream
 type StreamMessage struct {
 	Event          string             `json:"event"`
-	Media          Media              `json:"media"`
-	Protocol       string             `json:"protocol"`
+	Mark           StreamMessageMark  `json:"mark,omitempty"`
+	Media          StreamMessageMedia `json:"media,omitempty"`
+	Protocol       string             `json:"protocol,omitempty"`
 	SequenceNumber string             `json:"sequenceNumber"`
-	Start          StreamMessageStart `json:"start"`
+	Start          StreamMessageStart `json:"start,omitempty"`
 	StreamSid      string             `json:"streamSid"`
-	Stop           interface{}        `json:"stop"`
-	Version        string             `json:"version"`
+	Stop           StreamMessageStop  `json:"stop,omitempty"`
+	Version        string             `json:"version,omitempty"`
 }
 
-// Media event
-type Media struct {
-	Track     string `json:"track"`
-	Chunk     string `json:"chunk"`
-	Timestamp string `json:"timestamp"`
-	Payload   string `json:"payload"`
-}
-
+// StreamMessageStart is a property of a start message. This message contains
+// important metadata about the stream and is sent immediately after
+// the Connected message. It is only sent once at the start of the Stream.
 type StreamMessageStart struct {
 	AccountSid       string            `json:"accountSid"`
 	CallSid          string            `json:"callSid"`
@@ -36,7 +33,33 @@ type StreamMessageStart struct {
 	CustomParameters map[string]string `json:"customParameters"`
 }
 
+// StreamMessageMedia is a property of a media message. This message
+// type encapsulates the raw audio data.
+type StreamMessageMedia struct {
+	Track     string `json:"track"`
+	Chunk     string `json:"chunk"`
+	Timestamp string `json:"timestamp"`
+	Payload   string `json:"payload"`
+}
+
+// StreamMessageStop is a property of a stop message. A stop message
+// will be sent when the Stream is either `<Stop>`ped or the Call has ended.
+type StreamMessageStop struct {
+	AccountSid string `json:"accountSid"`
+	CallSid    string `json:"callSid"`
+}
+
+// StreamMessageMark is the property of a `mark` message. The `mark` event
+// is sent only during bi-directional streaming by using the `<Connect>`
+// verb. It is used to track, or label, when media has completed.
+type StreamMessageMark struct {
+	Name string `json:"name"`
+}
+
 /*
+
+Example Start Message
+
 {
  "event": "start",
  "sequenceNumber": "2",
@@ -61,16 +84,4 @@ type StreamMessageStart struct {
  },
 "streamSid": "MZ18ad3ab5a668481ce02b83e7395059f0"
 }
-------
-{
-	"event":"media",
-	"sequenceNumber":"424",
-	"media":{
-		"track":"inbound",
-		"chunk":"423",
-		"timestamp":"8585",
-		"payload":"deadbeef1==="
-	},
-	"streamSid":"MZ92fd0a8252929adb108b724f970eaebb"
-}",
 */
