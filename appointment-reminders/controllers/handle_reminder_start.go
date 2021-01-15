@@ -9,7 +9,7 @@ import (
 	"github.com/grokify/simplego/net/httputilmore"
 	"github.com/grokify/simplego/time/month"
 	"github.com/grokify/simplego/time/timeutil"
-	log "github.com/sirupsen/logrus"
+	"github.com/rs/zerolog/log"
 )
 
 // https://www.twilio.com/docs/voice/twiml/gather
@@ -32,7 +32,7 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 
 		// Call is already in progress, tell Twilio to continue
 		case twiml.InProgress:
-			log.Info("C1_InProgress")
+			log.Info().Msg("C1_InProgress")
 			nextWed := timeutil.NextWeekday(time.Wednesday)
 			res.Add(&twiml.Say{
 				Language: "en",

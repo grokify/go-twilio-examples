@@ -7,7 +7,7 @@ import (
 
 	"github.com/BTBurke/twiml"
 	"github.com/grokify/simplego/net/httputilmore"
-	log "github.com/sirupsen/logrus"
+	"github.com/rs/zerolog/log"
 )
 
 const AppRetryLimit int = 2
@@ -43,14 +43,14 @@ func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response
 	// automatically before the response is encoded.
 	b, err := res.Encode()
 	if err != nil {
-		log.Warn("C3_InProgress_Error_Encode [502]")
+		log.Warn().Msg("C3_InProgress_Error_Encode [502]")
 		http.Error(w, http.StatusText(502), 502)
 		return
 	}
 
 	// Write the XML response to the http.ReponseWriter
 	if _, err := w.Write(b); err != nil {
-		log.Warn("C3_InProgress_Error_Write [502]")
+		log.Warn().Msg("C3_InProgress_Error_Write [502]")
 		http.Error(w, http.StatusText(502), 502)
 		return
 	}
@@ -58,7 +58,7 @@ func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response
 		httputilmore.HeaderContentType,
 		httputilmore.ContentTypeAppXmlUtf8)
 	w.WriteHeader(200)
-	log.Info("C3_Success")
+	log.Info().Msg("C3_Success")
 	return
 }
 

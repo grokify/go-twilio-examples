@@ -8,7 +8,7 @@ import (
 	"github.com/BTBurke/twiml"
 	"github.com/grokify/go-twilio-examples/twilio"
 	"github.com/grokify/simplego/fmt/fmtutil"
-	log "github.com/sirupsen/logrus"
+	"github.com/rs/zerolog/log"
 )
 
 // https://www.twilio.com/docs/voice/twiml/gather
@@ -25,10 +25,11 @@ func HandleReminderProcess() func(http.ResponseWriter, *http.Request) {
 				numTries = numTriesTry
 			}
 		}
-		log.WithFields(log.Fields{
-			"requestUri":     r.URL.RequestURI(),
-			"numTriesParsed": strconv.Itoa(numTries),
-		}).Info("Handle_Reminder_Process")
+
+		log.Info().
+			Str("requestUri", r.URL.RequestURI()).
+			Int("numTriesParsed", numTries).
+			Msg("Handle_Reminder_Process")
 
 		// Bind the request
 		var evt twilio.GatherEvent
