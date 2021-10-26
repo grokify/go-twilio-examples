@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/grokify/go-twilio-examples"
-	om "github.com/grokify/oauth2more"
+	"github.com/grokify/goauth"
 	"github.com/grokify/simplego/config"
 	"github.com/grokify/simplego/fmt/fmtutil"
 	"github.com/kelseyhightower/envconfig"
@@ -34,7 +34,7 @@ func main() {
 	}
 	fmtutil.PrintJSON(callOpts)
 
-	client, err := om.NewClientBasicAuth(callOpts.Sid, callOpts.Token, false)
+	client, err := goauth.NewClientBasicAuth(callOpts.Sid, callOpts.Token, false)
 	if err != nil {
 		log.Fatal(err)
 	}
