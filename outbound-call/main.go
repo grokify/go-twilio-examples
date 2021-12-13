@@ -7,8 +7,8 @@ import (
 
 	"github.com/grokify/go-twilio-examples"
 	"github.com/grokify/goauth"
-	"github.com/grokify/simplego/config"
-	"github.com/grokify/simplego/fmt/fmtutil"
+	"github.com/grokify/mogo/config"
+	"github.com/grokify/mogo/fmt/fmtutil"
 	"github.com/kelseyhightower/envconfig"
 )
 

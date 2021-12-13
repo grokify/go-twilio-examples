@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/grokify/simplego/net/httputilmore"
-	"github.com/grokify/simplego/time/month"
-	"github.com/grokify/simplego/time/timeutil"
+	"github.com/grokify/mogo/net/httputilmore"
+	"github.com/grokify/mogo/time/month"
+	"github.com/grokify/mogo/time/timeutil"
 	"github.com/grokify/twiml"
 	"github.com/rs/zerolog/log"
 )

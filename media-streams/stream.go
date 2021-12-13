@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/grokify/simplego/audio/ulaw"
-	"github.com/grokify/simplego/time/timeutil"
+	"github.com/grokify/mogo/audio/ulaw"
+	"github.com/grokify/mogo/time/timeutil"
 	"github.com/rs/zerolog/log"
 
 	"github.com/grokify/go-twilio-examples"

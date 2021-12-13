@@ -6,9 +6,9 @@ import (
 	"os"
 
 	"github.com/buaazp/fasthttprouter"
-	"github.com/grokify/simplego/net/http/httpsimple"
-	"github.com/grokify/simplego/net/urlutil"
-	"github.com/grokify/simplego/strconv/strconvutil"
+	"github.com/grokify/mogo/net/http/httpsimple"
+	"github.com/grokify/mogo/net/urlutil"
+	"github.com/grokify/mogo/strconv/strconvutil"
 	"github.com/rs/zerolog/log"
 )
 
