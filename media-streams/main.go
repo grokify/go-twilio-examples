@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/buaazp/fasthttprouter"
-	"github.com/grokify/mogo/net/http/httpsimple"
+	"github.com/grokify/gohttp/httpsimple"
 	"github.com/grokify/mogo/net/urlutil"
 	"github.com/grokify/mogo/strconv/strconvutil"
 	"github.com/rs/zerolog/log"
@@ -18,13 +18,13 @@ func HandleHome(w http.ResponseWriter, r *http.Request) {
 }
 
 type Service struct {
-	BaseUrlWss string
-	Port       int
-	HTTPEngine string
+	BaseUrlWss    string
+	Port          int
+	HTTPEngineCfg string
 }
 
 func (svc Service) PortInt() int                       { return svc.Port }
-func (svc Service) HttpEngine() string                 { return svc.HTTPEngine }
+func (svc Service) HTTPEngine() string                 { return svc.HTTPEngineCfg }
 func (svc Service) RouterFast() *fasthttprouter.Router { return nil }
 func (svc Service) Router() http.Handler {
 	r := http.NewServeMux()
@@ -42,9 +42,9 @@ func (svc Service) WssUrl() string {
 
 func main() {
 	svc := Service{
-		BaseUrlWss: "wss://ringforce.ngrok.io", // ngrok http -subdomain=ringforce 8080
-		Port:       strconvutil.AtoiOrDefault(os.Getenv("PORT"), 8080),
-		HTTPEngine: ValueOrDefault(os.Getenv("HTTP_ENGINE"), "nethttp"),
+		BaseUrlWss:    "wss://ringforce.ngrok.io", // ngrok http -subdomain=ringforce 8080
+		Port:          strconvutil.AtoiOrDefault(os.Getenv("PORT"), 8080),
+		HTTPEngineCfg: ValueOrDefault(os.Getenv("HTTP_ENGINE"), "nethttp"),
 	}
 	log.Info().
 		Int("port", svc.Port).

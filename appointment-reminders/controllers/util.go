@@ -56,7 +56,7 @@ func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response
 	}
 	w.Header().Set(
 		httputilmore.HeaderContentType,
-		httputilmore.ContentTypeAppXmlUtf8)
+		httputilmore.ContentTypeAppXMLUtf8)
 	w.WriteHeader(200)
 	log.Info().Msg("C3_Success")
 	return

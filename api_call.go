@@ -42,6 +42,6 @@ func MakeCall(client *http.Client, apiUrl string, opts TwilioCallsOpts) (*http.R
 	}
 	req.Header.Add(
 		httputilmore.HeaderContentType,
-		httputilmore.ContentTypeAppFormUrlEncoded)
+		httputilmore.ContentTypeAppFormURLEncoded)
 	return client.Do(req)
 }

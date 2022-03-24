@@ -72,7 +72,7 @@ func WriteFiles(streamSid string, inboundBytes []byte) {
 		filebase := "media_" + time.Now().UTC().Format(timeutil.DT14) + "_" + streamSid
 		err := ioutil.WriteFile(filebase+".ulaw", inboundBytes, 0644)
 		utility.PanicIfErr(err)
-		err = ulaw.WriteFileWavFromUlaw(filebase+".wav", inboundBytes)
+		err = ulaw.WriteFileWAVFromULAW(filebase+".wav", inboundBytes)
 		utility.PanicIfErr(err)
 		log.Info().
 			Str("wav", filebase+".wav").

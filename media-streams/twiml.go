@@ -67,7 +67,7 @@ func (svc *Service) HandleCall(w http.ResponseWriter, r *http.Request) {
 		}
 		w.Header().Set(
 			httputilmore.HeaderContentType,
-			httputilmore.ContentTypeAppXmlUtf8)
+			httputilmore.ContentTypeAppXMLUtf8)
 		w.WriteHeader(200)
 	}
 }

@@ -28,7 +28,7 @@ func TwimlResponseProcess(w http.ResponseWriter, r *http.Request, res *twiml.Res
 	}
 	w.Header().Set(
 		httputilmore.HeaderContentType,
-		httputilmore.ContentTypeAppXmlUtf8)
+		httputilmore.ContentTypeAppXMLUtf8)
 	w.WriteHeader(200)
 	log.Info().Msg("twiml.response_success")
 	return

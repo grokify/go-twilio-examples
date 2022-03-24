@@ -63,7 +63,7 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 			}
 			w.Header().Set(
 				httputilmore.HeaderContentType,
-				httputilmore.ContentTypeAppXmlUtf8)
+				httputilmore.ContentTypeAppXMLUtf8)
 			w.WriteHeader(200)
 			return
 		}
