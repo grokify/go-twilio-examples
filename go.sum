@@ -213,8 +213,8 @@ github.com/grokify/gohttp v0.2.1/go.mod h1:lvWGlBA0PeelznQ5fFlr9GRbNOCsY86q5dmY9
 github.com/grokify/gostor v0.2.1/go.mod h1:4a6v+pcFFt4uxHThTcCcarL48EkMPe5Fc/0NvCQAifY=
 github.com/grokify/mogo v0.36.5/go.mod h1:GWl3aLE1O+K7If1Ekj4bDgi8pqVLQOzA25BR1A37IQs=
 github.com/grokify/mogo v0.37.3/go.mod h1:rvoGZyuR5f7Xy0UehTpAApQUv+rPpFY/W43LZcTJ+e8=
-github.com/grokify/mogo v0.37.12 h1:G1rVOAaEA00C5EpG2jgcdzgP2XegIb/QEHgN1TyivTQ=
-github.com/grokify/mogo v0.37.12/go.mod h1:C5Sr7TmcUxSYOFmQrlSsh+6Kx5WDpXgsXW+G261vV3s=
+github.com/grokify/mogo v0.37.15 h1:/N8tanuvxqliH+aD+htsajXV8Y5F+lChKSO9HXfvB2Y=
+github.com/grokify/mogo v0.37.15/go.mod h1:C5Sr7TmcUxSYOFmQrlSsh+6Kx5WDpXgsXW+G261vV3s=
 github.com/grokify/twiml v1.1.2 h1:9TVz6+8DvMloQKu26wq6XQLA3ePqxJ+yCHFG4Cxs+1A=
 github.com/grokify/twiml v1.1.2/go.mod h1:pA0/taJ2TII5nC+5DeiG4Y5DvTuE5Vh8h0/MTWEY25Y=
 github.com/grpc-ecosystem/grpc-gateway v1.16.0/go.mod h1:BDjrQk3hbvj6Nolgz8mAMFbcEtjT1g+wF4CSlocrBnw=
