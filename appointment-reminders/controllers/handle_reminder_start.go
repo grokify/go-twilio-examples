@@ -33,7 +33,7 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 		// Call is already in progress, tell Twilio to continue
 		case twiml.InProgress:
 			log.Info().Msg("C1_InProgress")
-			nextWed := timeutil.NextWeekday(time.Wednesday)
+			nextWed := timeutil.WeekdayNext(time.Wednesday)
 			res.Add(&twiml.Say{
 				Language: "en",
 				Text: fmt.Sprintf("Hello, you have an appointment coming up on Wednesday %s %s",
