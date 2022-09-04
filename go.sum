@@ -51,8 +51,8 @@ github.com/gorilla/websocket v1.5.0 h1:PPwGk2jz7EePpoHN/+ClbZu8SPxiqlu12wZP/3sWm
 github.com/gorilla/websocket v1.5.0/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 github.com/grokify/base36 v1.0.5 h1:iUgnt40hrPtn3M2gjU4Darow5ikf8xWXrTuMWTLziCk=
 github.com/grokify/base36 v1.0.5/go.mod h1:L+1aaUBGfp5Ctar7KCS5G9uPABo1Ccu1Ct2iQAuhOJ4=
-github.com/grokify/goauth v0.16.0 h1:m/42nNXVpld3XSFeoadgKDvMaAPZXBNNp+Z27qALF7w=
-github.com/grokify/goauth v0.16.0/go.mod h1:PF0CTOhHSM3YBq5epu6fhD4Cy4CydIztq0Zq9pgs1us=
+github.com/grokify/goauth v0.16.2 h1:H1IkedCVJ5I2OtbdSNyVzVdziBIqSTNAW9rIGcaYJp8=
+github.com/grokify/goauth v0.16.2/go.mod h1:nsftcENLMdnExOgYE0Jp8nRkrzJ7EKbntxbqe0OHEfQ=
 github.com/grokify/gohttp v0.2.1 h1:9WRHON2OUcQOjbbs12rMSfmepZVzlUxB0etNX/gowCo=
 github.com/grokify/gohttp v0.2.1/go.mod h1:lvWGlBA0PeelznQ5fFlr9GRbNOCsY86q5dmY9FqSlxE=
 github.com/grokify/mogo v0.40.4 h1:IDGRHgRj5eaCsl6na0++xLikRsAgTIpf0cTt49du7fY=
