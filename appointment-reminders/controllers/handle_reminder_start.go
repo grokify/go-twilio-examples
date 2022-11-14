@@ -21,7 +21,7 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 		// Bind the request
 		var cr twiml.VoiceRequest
 		if err := twiml.Bind(&cr, r); err != nil {
-			http.Error(w, http.StatusText(400), 400)
+			http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 			return
 		}
 
@@ -29,7 +29,6 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 		res := twiml.NewResponse()
 
 		switch status := cr.CallStatus; status {
-
 		// Call is already in progress, tell Twilio to continue
 		case twiml.InProgress:
 			log.Info().Msg("C1_InProgress")
@@ -54,11 +53,11 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 			res.Add(&twiml.Hangup{})
 			b, err := res.Encode()
 			if err != nil {
-				http.Error(w, http.StatusText(502), 502)
+				http.Error(w, http.StatusText(http.StatusBadGateway), http.StatusBadGateway)
 				return
 			}
 			if _, err := w.Write(b); err != nil {
-				http.Error(w, http.StatusText(502), 502)
+				http.Error(w, http.StatusText(http.StatusBadGateway), http.StatusBadGateway)
 				return
 			}
 			w.Header().Set(

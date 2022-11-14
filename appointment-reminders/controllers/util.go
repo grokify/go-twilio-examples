@@ -43,14 +43,14 @@ func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response
 	b, err := res.Encode()
 	if err != nil {
 		log.Warn().Msg("C3_InProgress_Error_Encode [502]")
-		http.Error(w, http.StatusText(502), 502)
+		http.Error(w, http.StatusText(http.StatusBadGateway), http.StatusBadGateway)
 		return
 	}
 
 	// Write the XML response to the http.ReponseWriter
 	if _, err := w.Write(b); err != nil {
 		log.Warn().Msg("C3_InProgress_Error_Write [502]")
-		http.Error(w, http.StatusText(502), 502)
+		http.Error(w, http.StatusText(http.StatusBadGateway), http.StatusBadGateway)
 		return
 	}
 	w.Header().Set(

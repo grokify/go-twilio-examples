@@ -14,7 +14,7 @@ func TwimlResponseProcess(w http.ResponseWriter, r *http.Request, res *twiml.Res
 	b, err := res.Encode()
 	if err != nil {
 		log.Warn().Err(err).Msg("twiml.response_encode_twiml.Response_error]")
-		http.Error(w, http.StatusText(502), 502)
+		http.Error(w, http.StatusText(http.StatusBadGateway), http.StatusBadGateway)
 		return
 	}
 
@@ -23,7 +23,7 @@ func TwimlResponseProcess(w http.ResponseWriter, r *http.Request, res *twiml.Res
 	// Write the XML response to the http.ReponseWriter
 	if _, err := w.Write(b); err != nil {
 		log.Warn().Err(err).Msg("twiml.response_writeXml_error")
-		http.Error(w, http.StatusText(502), 502)
+		http.Error(w, http.StatusText(http.StatusBadGateway), http.StatusBadGateway)
 		return
 	}
 	w.Header().Set(

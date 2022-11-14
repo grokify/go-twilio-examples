@@ -35,8 +35,8 @@ func (opts *TwilioCallsOpts) StringsReader() *strings.Reader {
 	return strings.NewReader(opts.MustString())
 }
 
-func MakeCall(client *http.Client, apiUrl string, opts TwilioCallsOpts) (*http.Response, error) {
-	req, err := http.NewRequest(http.MethodPost, apiUrl, opts.StringsReader())
+func MakeCall(client *http.Client, apiURL string, opts TwilioCallsOpts) (*http.Response, error) {
+	req, err := http.NewRequest(http.MethodPost, apiURL, opts.StringsReader())
 	if err != nil {
 		return nil, err
 	}
