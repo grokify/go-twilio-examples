@@ -37,7 +37,11 @@ func HandleReminderProcess() func(http.ResponseWriter, *http.Request) {
 			http.Error(w, http.StatusText(400), 400)
 			return
 		}
-		fmtutil.PrintJSON(evt)
+		err := fmtutil.PrintJSON(evt)
+		if err != nil {
+			http.Error(w, http.StatusText(400), 400)
+			return
+		}
 
 		// Create a new response container
 		res := twiml.NewResponse()

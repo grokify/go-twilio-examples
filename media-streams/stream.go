@@ -4,8 +4,8 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 
@@ -33,7 +33,7 @@ func HandleMediaStream(w http.ResponseWriter, r *http.Request) {
 	inboundBytes := []byte{}
 
 	loop := true
-	for loop == true {
+	for loop {
 		_, messageBytes, err := c.ReadMessage()
 		utility.PanicIfErr(err)
 		log.Info().Str("body", string(messageBytes)).Msg("inbound-wss-message")
@@ -70,7 +70,7 @@ func HandleMediaStream(w http.ResponseWriter, r *http.Request) {
 func WriteFiles(streamSid string, inboundBytes []byte) {
 	if len(streamSid) > 0 && len(inboundBytes) > 0 {
 		filebase := "media_" + time.Now().UTC().Format(timeutil.DT14) + "_" + streamSid
-		err := ioutil.WriteFile(filebase+".ulaw", inboundBytes, 0644)
+		err := os.WriteFile(filebase+".ulaw", inboundBytes, 0644)
 		utility.PanicIfErr(err)
 		err = ulaw.WriteFileWAVFromULAW(filebase+".wav", inboundBytes)
 		utility.PanicIfErr(err)

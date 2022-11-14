@@ -31,5 +31,4 @@ func TwimlResponseProcess(w http.ResponseWriter, r *http.Request, res *twiml.Res
 		httputilmore.ContentTypeAppXMLUtf8)
 	w.WriteHeader(200)
 	log.Info().Msg("twiml.response_success")
-	return
 }

@@ -3,7 +3,6 @@ package controllers
 import (
 	"net/http"
 	"strconv"
-	"time"
 
 	"github.com/grokify/mogo/net/httputilmore"
 	"github.com/grokify/twiml"
@@ -59,10 +58,4 @@ func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response
 		httputilmore.ContentTypeAppXMLUtf8)
 	w.WriteHeader(200)
 	log.Info().Msg("C3_Success")
-	return
-}
-
-func getTimestampNow() string {
-	dt := time.Now()
-	return dt.Format(time.RFC3339)
 }

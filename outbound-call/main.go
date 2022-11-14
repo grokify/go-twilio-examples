@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 
 	"github.com/grokify/go-twilio-examples"
 	"github.com/grokify/goauth"
 	"github.com/grokify/mogo/config"
 	"github.com/grokify/mogo/fmt/fmtutil"
+	"github.com/grokify/mogo/log/logutil"
 	"github.com/kelseyhightower/envconfig"
 )
 
@@ -23,21 +23,16 @@ type CallOptions struct {
 
 func main() {
 	err := config.LoadDotEnvSkipEmpty("./.env", os.Getenv("ENVPATH"))
-	if err != nil {
-		log.Fatal(err)
-	}
+	logutil.FatalErr(err)
 
 	var callOpts CallOptions
 	err = envconfig.Process("twilio_demo", &callOpts)
-	if err != nil {
-		log.Fatal(err.Error())
-	}
-	fmtutil.PrintJSON(callOpts)
+	logutil.FatalErr(err)
+
+	fmtutil.MustPrintJSON(callOpts)
 
 	client, err := goauth.NewClientBasicAuth(callOpts.Sid, callOpts.Token, false)
-	if err != nil {
-		log.Fatal(err)
-	}
+	logutil.FatalErr(err)
 
 	apiOpts := twilio.TwilioCallsOpts{
 		To:          callOpts.To,
@@ -47,9 +42,8 @@ func main() {
 	resp, err := twilio.MakeCall(client,
 		twilio.BuildTwilioCallURL(callOpts.Sid),
 		apiOpts)
-	if err != nil {
-		log.Fatal(err)
-	}
+	logutil.FatalErr(err)
+
 	fmt.Printf("Called with status [%v]\n", resp.StatusCode)
 
 	fmt.Println("DONE")

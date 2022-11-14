@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 
@@ -21,5 +22,5 @@ func main() {
 		portStr = ":" + port
 	}
 	fmt.Printf("Running on [%v]\n", portStr)
-	http.ListenAndServe(portStr, nil)
+	log.Fatal(http.ListenAndServe(portStr, nil))
 }
