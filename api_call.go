@@ -10,11 +10,11 @@ import (
 )
 
 const (
-	TwilioApiCallsJsonURLFormat = `https://api.twilio.com/2010-04-01/Accounts/%s/Calls.json`
+	TwilioAPICallsJSONURLFormat = `https://api.twilio.com/2010-04-01/Accounts/%s/Calls.json`
 )
 
 func BuildTwilioCallURL(accountSid string) string {
-	return fmt.Sprintf(TwilioApiCallsJsonURLFormat, accountSid)
+	return fmt.Sprintf(TwilioAPICallsJSONURLFormat, accountSid)
 }
 
 type TwilioCallsOpts struct {

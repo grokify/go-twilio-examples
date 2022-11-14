@@ -18,7 +18,7 @@ func HandleHome(w http.ResponseWriter, r *http.Request) {
 }
 
 type Service struct {
-	BaseUrlWSS    string
+	BaseURLWSS    string
 	Port          int
 	HTTPEngineCfg string
 }
@@ -36,13 +36,13 @@ func (svc Service) Router() http.Handler {
 	return r
 }
 
-func (svc Service) WssUrl() string {
-	return urlutil.Join(svc.BaseUrlWSS, "media")
+func (svc Service) WSSURL() string {
+	return urlutil.Join(svc.BaseURLWSS, "media")
 }
 
 func main() {
 	svc := Service{
-		BaseUrlWSS:    "wss://ringforce.ngrok.io", // ngrok http -subdomain=ringforce 8080
+		BaseURLWSS:    "wss://ringforce.ngrok.io", // ngrok http -subdomain=ringforce 8080
 		Port:          strconvutil.AtoiOrDefault(os.Getenv("PORT"), 8080),
 		HTTPEngineCfg: ValueOrDefault(os.Getenv("HTTP_ENGINE"), "nethttp"),
 	}
