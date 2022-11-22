@@ -55,8 +55,8 @@ github.com/grokify/goauth v0.16.5 h1:NiFBWnFQY/3Ol+oTFUrPSuP5bs4YmJrQD8hsZRViT1E
 github.com/grokify/goauth v0.16.5/go.mod h1:CY+vTrG+sBJXwC4D1c8ruOaD4Mr+dQMr/EY764oO80w=
 github.com/grokify/gohttp v0.2.2 h1:bb+LOffbJdwzazuuwMnS320cId02iFFicLwWIGeMD3o=
 github.com/grokify/gohttp v0.2.2/go.mod h1:665NrVNsW1YlgiFbl8Iyl62gEcGZ6CgE2nCsQO6OLYg=
-github.com/grokify/mogo v0.41.1 h1:ZZBi4Pcap5jOygVrUHE0R6qniEwjl+7YlX8pTjUPq2o=
-github.com/grokify/mogo v0.41.1/go.mod h1:V3nkl9GT44dyFZJYetSfFMj/4hqRMBCtoWUXDC6yVJw=
+github.com/grokify/mogo v0.41.3 h1:BbD5K1KDoJ9qa8H26aOv0hvq7s4Gqot9qyWYQyQ64Hs=
+github.com/grokify/mogo v0.41.3/go.mod h1:F2BzVq/EKWBOknixSZhN/V3n2YTxfMuhLwwLRXVblw0=
 github.com/grokify/twiml v1.1.2 h1:9TVz6+8DvMloQKu26wq6XQLA3ePqxJ+yCHFG4Cxs+1A=
 github.com/grokify/twiml v1.1.2/go.mod h1:pA0/taJ2TII5nC+5DeiG4Y5DvTuE5Vh8h0/MTWEY25Y=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
@@ -124,8 +124,8 @@ github.com/valyala/tcplisten v1.0.0/go.mod h1:T0xQ8SeCZGxckz9qRXTfG43PvQ/mcWh7Fw
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/crypto v0.0.0-20220214200702-86341886e292/go.mod h1:IxCIyHEi3zRg3s0A5j5BB6A9Jmi73HwBIUl50j+osU4=
-golang.org/x/exp v0.0.0-20221111204811-129d8d6c17ab h1:1S7USr8/C0Sgk4egxq4zZ07zYt2Xh1IiFp8hUMXH/us=
-golang.org/x/exp v0.0.0-20221111204811-129d8d6c17ab/go.mod h1:CxIveKay+FTh1D0yPZemJVgC/95VzuuOLq5Qi4xnoYc=
+golang.org/x/exp v0.0.0-20221114191408-850992195362 h1:NoHlPRbyl1VFI6FjwHtPQCN7wAMXI6cKcqrmXhOOfBQ=
+golang.org/x/exp v0.0.0-20221114191408-850992195362/go.mod h1:CxIveKay+FTh1D0yPZemJVgC/95VzuuOLq5Qi4xnoYc=
 golang.org/x/net v0.0.0-20180906233101-161cd47e91fd/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/net v0.0.0-20190603091049-60506f45cf65/go.mod h1:HSz+uSET+XFnRR8LxR5pz3Of3rY3CfYBVs4xY44aLks=
