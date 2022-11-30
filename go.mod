@@ -8,7 +8,7 @@ require (
 	github.com/gorilla/websocket v1.5.0
 	github.com/grokify/goauth v0.16.6
 	github.com/grokify/gohttp v0.2.2
-	github.com/grokify/mogo v0.41.6
+	github.com/grokify/mogo v0.41.10
 	github.com/grokify/twiml v1.1.2
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/rs/zerolog v1.28.0
