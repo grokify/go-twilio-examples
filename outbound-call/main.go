@@ -22,7 +22,7 @@ type CallOptions struct {
 }
 
 func main() {
-	err := config.LoadDotEnvSkipEmpty("./.env", os.Getenv("ENVPATH"))
+	_, err := config.LoadDotEnv([]string{"./.env", os.Getenv("ENVPATH")}, 1)
 	logutil.FatalErr(err)
 
 	var callOpts CallOptions

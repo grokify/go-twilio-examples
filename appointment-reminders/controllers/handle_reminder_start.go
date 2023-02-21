@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/grokify/mogo/net/httputilmore"
+	"github.com/grokify/mogo/net/http/httputilmore"
 	"github.com/grokify/mogo/time/month"
 	"github.com/grokify/mogo/time/timeutil"
 	"github.com/grokify/twiml"
@@ -32,7 +32,7 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 		// Call is already in progress, tell Twilio to continue
 		case twiml.InProgress:
 			log.Info().Msg("C1_InProgress")
-			nextWed := timeutil.WeekdayNext(time.Wednesday)
+			nextWed := timeutil.NewTimeMore(time.Now(), 0).WeekdayNext(time.Wednesday)
 			res.Add(&twiml.Say{
 				Language: "en",
 				Text: fmt.Sprintf("Hello, you have an appointment coming up on Wednesday %s %s",
@@ -47,7 +47,6 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 		case twiml.Queued:
 			w.WriteHeader(200)
 			return
-
 		// Call is over, hang up
 		default:
 			res.Add(&twiml.Hangup{})
