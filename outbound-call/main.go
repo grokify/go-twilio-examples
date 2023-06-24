@@ -5,7 +5,7 @@ import (
 	"os"
 
 	twilio "github.com/grokify/go-twilio-examples"
-	"github.com/grokify/goauth"
+	"github.com/grokify/goauth/authutil"
 	"github.com/grokify/mogo/config"
 	"github.com/grokify/mogo/fmt/fmtutil"
 	"github.com/grokify/mogo/log/logutil"
@@ -31,7 +31,7 @@ func main() {
 
 	fmtutil.MustPrintJSON(callOpts)
 
-	client, err := goauth.NewClientBasicAuth(callOpts.Sid, callOpts.Token, false)
+	client, err := authutil.NewClientBasicAuth(callOpts.Sid, callOpts.Token, false)
 	logutil.FatalErr(err)
 
 	apiOpts := twilio.TwilioCallsOpts{
