@@ -11,7 +11,7 @@ require (
 	github.com/grokify/mogo v0.50.0
 	github.com/grokify/twiml v1.1.2
 	github.com/kelseyhightower/envconfig v1.4.0
-	github.com/rs/zerolog v1.29.1
+	github.com/rs/zerolog v1.30.0
 )
 
 require (
