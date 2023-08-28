@@ -58,8 +58,8 @@ github.com/grokify/goauth v0.19.0 h1:3rebrc21Pqw70sMiMLBYPOe6XZCpV1FFU5zFro1TcQw
 github.com/grokify/goauth v0.19.0/go.mod h1:/+a2RRfjHDy2frBwEiW1nIRqG/Cn3ZkK474Z+La1iVA=
 github.com/grokify/gohttp v0.2.6 h1:s3cUu0Jr+4xCvAa7vNtelA5MEkPh1f1uuPmwE40o7R8=
 github.com/grokify/gohttp v0.2.6/go.mod h1:8KOC8iXO8qvtGvXoZeHWQdH+Y1Vfiwfe+5CoLMdqRtI=
-github.com/grokify/mogo v0.53.0 h1:sDoOEDvgUa5M1yCmEtCG9MTWkPLhqe+b/x9vLIiFeHw=
-github.com/grokify/mogo v0.53.0/go.mod h1:igRUlqAk0mRJxuPeLeTUhZ+FpUwAXsXutZ7nPKneUVA=
+github.com/grokify/mogo v0.54.0 h1:fKT5hNnPN5qRo0jE6QJf4L0vWV9hJxxVJNgC97PtVDI=
+github.com/grokify/mogo v0.54.0/go.mod h1:igRUlqAk0mRJxuPeLeTUhZ+FpUwAXsXutZ7nPKneUVA=
 github.com/grokify/twiml v1.1.2 h1:9TVz6+8DvMloQKu26wq6XQLA3ePqxJ+yCHFG4Cxs+1A=
 github.com/grokify/twiml v1.1.2/go.mod h1:pA0/taJ2TII5nC+5DeiG4Y5DvTuE5Vh8h0/MTWEY25Y=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
