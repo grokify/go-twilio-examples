@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/google/go-querystring v1.1.0
-	github.com/gorilla/websocket v1.5.0
+	github.com/gorilla/websocket v1.5.1
 	github.com/grokify/goauth v0.20.1
 	github.com/grokify/gohttp v0.2.6
 	github.com/grokify/mogo v0.56.0
@@ -40,9 +40,9 @@ require (
 	github.com/valyala/fasthttp v1.49.0 // indirect
 	github.com/valyala/fastjson v1.6.4 // indirect
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // indirect
-	golang.org/x/net v0.15.0 // indirect
+	golang.org/x/net v0.17.0 // indirect
 	golang.org/x/oauth2 v0.11.0 // indirect
-	golang.org/x/sys v0.12.0 // indirect
+	golang.org/x/sys v0.13.0 // indirect
 	golang.org/x/text v0.13.0 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
