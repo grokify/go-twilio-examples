@@ -7,7 +7,7 @@ require (
 	github.com/google/go-querystring v1.1.0
 	github.com/gorilla/websocket v1.5.0
 	github.com/grokify/goauth v0.20.1
-	github.com/grokify/gohttp v0.2.6
+	github.com/grokify/gohttp v0.2.7
 	github.com/grokify/mogo v0.56.0
 	github.com/grokify/twiml v1.1.2
 	github.com/kelseyhightower/envconfig v1.4.0
@@ -15,7 +15,7 @@ require (
 )
 
 require (
-	github.com/andybalholm/brotli v1.0.5 // indirect
+	github.com/andybalholm/brotli v1.0.6 // indirect
 	github.com/apex/gateway v1.1.2 // indirect
 	github.com/aws/aws-lambda-go v1.41.0 // indirect
 	github.com/buger/jsonparser v1.1.1 // indirect
@@ -29,7 +29,7 @@ require (
 	github.com/huandu/xstrings v1.4.0 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/klauspost/compress v1.16.7 // indirect
+	github.com/klauspost/compress v1.17.2 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -37,7 +37,7 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/stretchr/testify v1.8.1 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/fasthttp v1.49.0 // indirect
+	github.com/valyala/fasthttp v1.50.0 // indirect
 	github.com/valyala/fastjson v1.6.4 // indirect
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // indirect
 	golang.org/x/net v0.15.0 // indirect
