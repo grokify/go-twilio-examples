@@ -8,7 +8,7 @@ require (
 	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/google/go-querystring v1.1.0
 	github.com/gorilla/websocket v1.5.1
-	github.com/grokify/goauth v0.20.5
+	github.com/grokify/goauth v0.20.6
 	github.com/grokify/gohttp v0.2.7
 	github.com/grokify/mogo v0.62.2
 	github.com/grokify/twiml v1.1.2
@@ -21,7 +21,7 @@ require (
 	github.com/apex/gateway v1.1.2 // indirect
 	github.com/aws/aws-lambda-go v1.41.0 // indirect
 	github.com/caarlos0/env/v6 v6.10.1 // indirect
-	github.com/golang-jwt/jwt/v5 v5.1.0 // indirect
+	github.com/golang-jwt/jwt/v5 v5.2.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/gorilla/mux v1.8.1 // indirect
@@ -41,7 +41,7 @@ require (
 	github.com/valyala/fasthttp v1.50.0 // indirect
 	golang.org/x/exp v0.0.0-20231206192017-f3f8817b8deb // indirect
 	golang.org/x/net v0.19.0 // indirect
-	golang.org/x/oauth2 v0.14.0 // indirect
+	golang.org/x/oauth2 v0.15.0 // indirect
 	golang.org/x/sys v0.15.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
