@@ -8,9 +8,9 @@ require (
 	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/google/go-querystring v1.1.0
 	github.com/gorilla/websocket v1.5.1
-	github.com/grokify/goauth v0.20.6
+	github.com/grokify/goauth v0.20.7
 	github.com/grokify/gohttp v0.2.7
-	github.com/grokify/mogo v0.62.2
+	github.com/grokify/mogo v0.62.3
 	github.com/grokify/twiml v1.1.2
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/rs/zerolog v1.31.0
