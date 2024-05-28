@@ -10,7 +10,7 @@ require (
 	github.com/gorilla/websocket v1.5.1
 	github.com/grokify/goauth v0.21.0
 	github.com/grokify/gohttp v0.2.7
-	github.com/grokify/mogo v0.63.11
+	github.com/grokify/mogo v0.64.0
 	github.com/grokify/twiml v1.1.2
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/rs/zerolog v1.32.0
