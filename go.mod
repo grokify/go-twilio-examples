@@ -7,7 +7,7 @@ toolchain go1.22.2
 require (
 	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/google/go-querystring v1.1.0
-	github.com/gorilla/websocket v1.5.1
+	github.com/gorilla/websocket v1.5.2
 	github.com/grokify/goauth v0.21.0
 	github.com/grokify/gohttp v0.2.7
 	github.com/grokify/mogo v0.63.11
