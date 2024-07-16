@@ -10,7 +10,7 @@ require (
 	github.com/gorilla/websocket v1.5.1
 	github.com/grokify/goauth v0.21.0
 	github.com/grokify/gohttp v0.2.7
-	github.com/grokify/mogo v0.63.11
+	github.com/grokify/mogo v0.64.6
 	github.com/grokify/twiml v1.1.2
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/rs/zerolog v1.32.0
@@ -25,8 +25,8 @@ require (
 	github.com/gorilla/mux v1.8.1 // indirect
 	github.com/gorilla/schema v1.3.0 // indirect
 	github.com/grokify/base36 v1.0.5 // indirect
-	github.com/huandu/xstrings v1.4.0 // indirect
-	github.com/jessevdk/go-flags v1.5.0 // indirect
+	github.com/huandu/xstrings v1.5.0 // indirect
+	github.com/jessevdk/go-flags v1.6.1 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/compress v1.17.8 // indirect
@@ -38,10 +38,10 @@ require (
 	github.com/stretchr/testify v1.8.4 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.52.0 // indirect
-	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842 // indirect
-	golang.org/x/net v0.25.0 // indirect
+	golang.org/x/exp v0.0.0-20240707233637-46b078467d37 // indirect
+	golang.org/x/net v0.27.0 // indirect
 	golang.org/x/oauth2 v0.20.0 // indirect
-	golang.org/x/sys v0.20.0 // indirect
-	golang.org/x/text v0.15.0 // indirect
+	golang.org/x/sys v0.22.0 // indirect
+	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 )
