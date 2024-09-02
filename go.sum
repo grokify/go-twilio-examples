@@ -48,8 +48,8 @@ github.com/grokify/goauth v0.21.10 h1:UkRWcB9oV7UA9P5wTY2zP8qYaNnh9avGNSgKLXuHfU
 github.com/grokify/goauth v0.21.10/go.mod h1:Tax9qWgrLHTsuI9Cq0Bp9Ry8YMNJi+uUrReyU2oIr1o=
 github.com/grokify/gohttp v0.2.7 h1:HU8dXhUQCYKHpy69LqiK8jRYxoLtYUGx0/IZ4u5WwVQ=
 github.com/grokify/gohttp v0.2.7/go.mod h1:jcYYSbLkLi+KbGOQfLZbDrhr0yg7uWphybyfJFgZgEA=
-github.com/grokify/mogo v0.64.8 h1:Oi7X6EWIaBVPLirrP8DAAMcTgQzUHBqag36yjBzMwTU=
-github.com/grokify/mogo v0.64.8/go.mod h1:qD4Zz/GTGquZ7prO4A7h3kT7ZntMshXLk1lXdviKkUI=
+github.com/grokify/mogo v0.64.9 h1:sCS/or6Gk1xYOlH+3PI1TkgiALC63pvmXFsAGDD9Dg4=
+github.com/grokify/mogo v0.64.9/go.mod h1:lyAkBnG6PoXz1F4Pb7TPVaH+1aWLANgUxGSnlgvtVHA=
 github.com/grokify/twiml v1.1.2 h1:9TVz6+8DvMloQKu26wq6XQLA3ePqxJ+yCHFG4Cxs+1A=
 github.com/grokify/twiml v1.1.2/go.mod h1:pA0/taJ2TII5nC+5DeiG4Y5DvTuE5Vh8h0/MTWEY25Y=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
@@ -114,8 +114,8 @@ github.com/valyala/fasthttp v1.52.0 h1:wqBQpxH71XW0e2g+Og4dzQM8pk34aFYlA1Ga8db7g
 github.com/valyala/fasthttp v1.52.0/go.mod h1:hf5C4QnVMkNXMspnsUlfM3WitlgYflyhHYoKol/szxQ=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
-golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa h1:ELnwvuAXPNtPk1TJRuGkI9fDTwym6AYBu0qzT8AcHdI=
-golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa/go.mod h1:akd2r19cwCdwSwWeIdzYQGa/EZZyqcOdwWiwj5L5eKQ=
+golang.org/x/exp v0.0.0-20240823005443-9b4947da3948 h1:kx6Ds3MlpiUHKj7syVnbp57++8WpuKPcR5yjLBjvLEA=
+golang.org/x/exp v0.0.0-20240823005443-9b4947da3948/go.mod h1:akd2r19cwCdwSwWeIdzYQGa/EZZyqcOdwWiwj5L5eKQ=
 golang.org/x/net v0.0.0-20180906233101-161cd47e91fd/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/net v0.0.0-20200520004742-59133d7f0dd7/go.mod h1:qpuaurCH72eLCgpAm/N6yyVIVM9cpaDIP3A8BGJEC5A=
