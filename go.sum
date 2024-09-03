@@ -48,8 +48,8 @@ github.com/grokify/goauth v0.21.10 h1:UkRWcB9oV7UA9P5wTY2zP8qYaNnh9avGNSgKLXuHfU
 github.com/grokify/goauth v0.21.10/go.mod h1:Tax9qWgrLHTsuI9Cq0Bp9Ry8YMNJi+uUrReyU2oIr1o=
 github.com/grokify/gohttp v0.2.7 h1:HU8dXhUQCYKHpy69LqiK8jRYxoLtYUGx0/IZ4u5WwVQ=
 github.com/grokify/gohttp v0.2.7/go.mod h1:jcYYSbLkLi+KbGOQfLZbDrhr0yg7uWphybyfJFgZgEA=
-github.com/grokify/mogo v0.64.9 h1:sCS/or6Gk1xYOlH+3PI1TkgiALC63pvmXFsAGDD9Dg4=
-github.com/grokify/mogo v0.64.9/go.mod h1:lyAkBnG6PoXz1F4Pb7TPVaH+1aWLANgUxGSnlgvtVHA=
+github.com/grokify/mogo v0.64.10 h1:zK8xzDFXmCwYyoTp72urPMv/X/DuBLtX51/oVJOO3IM=
+github.com/grokify/mogo v0.64.10/go.mod h1:zZsDlAknrt0pTHGeNpm3ZNaUTHSGQoIL6qtmjx0IB0I=
 github.com/grokify/twiml v1.1.2 h1:9TVz6+8DvMloQKu26wq6XQLA3ePqxJ+yCHFG4Cxs+1A=
 github.com/grokify/twiml v1.1.2/go.mod h1:pA0/taJ2TII5nC+5DeiG4Y5DvTuE5Vh8h0/MTWEY25Y=
 github.com/hpcloud/tail v1.0.0/go.mod h1:ab1qPbhIpdTxEkNHXyeSf5vhxWSCs/tWer42PpOxQnU=
