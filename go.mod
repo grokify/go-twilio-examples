@@ -1,14 +1,14 @@
 module github.com/grokify/go-twilio-examples
 
-go 1.22.0
+go 1.22.6
 
-toolchain go1.22.2
+toolchain go1.23.0
 
 require (
 	github.com/buaazp/fasthttprouter v0.1.1
 	github.com/google/go-querystring v1.1.0
 	github.com/gorilla/websocket v1.5.3
-	github.com/grokify/goauth v0.21.10
+	github.com/grokify/goauth v0.22.0
 	github.com/grokify/gohttp v0.2.7
 	github.com/grokify/mogo v0.64.11
 	github.com/grokify/twiml v1.1.2
@@ -28,7 +28,7 @@ require (
 	github.com/jessevdk/go-flags v1.6.1 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/klauspost/compress v1.17.9 // indirect
+	github.com/klauspost/compress v1.17.10 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
@@ -36,10 +36,10 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/stretchr/testify v1.9.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/fasthttp v1.55.0 // indirect
-	golang.org/x/exp v0.0.0-20240904232852-e7e105dedf7e // indirect
+	github.com/valyala/fasthttp v1.56.0 // indirect
+	golang.org/x/exp v0.0.0-20240909161429-701f63a606c0 // indirect
 	golang.org/x/net v0.29.0 // indirect
-	golang.org/x/oauth2 v0.22.0 // indirect
+	golang.org/x/oauth2 v0.23.0 // indirect
 	golang.org/x/sys v0.25.0 // indirect
 	golang.org/x/text v0.18.0 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
