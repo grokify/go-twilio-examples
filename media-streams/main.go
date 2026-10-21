@@ -41,8 +41,12 @@ func (svc Service) WSSURL() string {
 }
 
 func main() {
+	baseURLWSS := os.Getenv("BASE_URL_WSS")
+	if baseURLWSS == "" {
+		log.Fatal().Msg("BASE_URL_WSS is required, e.g. wss://<your-host>.ngrok.io")
+	}
 	svc := Service{
-		BaseURLWSS:    "wss://ringforce.ngrok.io", // ngrok http -subdomain=ringforce 8080
+		BaseURLWSS:    baseURLWSS,
 		Port:          strconvutil.AtoiOrDefault(os.Getenv("PORT"), 8080),
 		HTTPEngineCfg: ValueOrDefault(os.Getenv("HTTP_ENGINE"), "nethttp"),
 	}

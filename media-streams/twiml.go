@@ -42,7 +42,7 @@ func (svc *Service) HandleCall(w http.ResponseWriter, r *http.Request) {
 			&twilio.Start{
 				Children: []twiml.Markup{
 					&twilio.Stream{
-						URL: "wss://ringforce.ngrok.io/media"}}},
+						URL: svc.WSSURL()}}},
 			&twiml.Say{
 				Language: "en",
 				Text:     fmt.Sprintf("I will stream the next %d seconds of audio through your websocket", callLength)},
