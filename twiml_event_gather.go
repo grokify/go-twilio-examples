@@ -1,7 +1,6 @@
 package twilio
 
 type GatherEvent struct {
-	msg           string
 	AccountSid    string
 	ApiVersion    string
 	Called        string
