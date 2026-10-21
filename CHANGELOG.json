@@ -1,0 +1,133 @@
+{
+  "irVersion": "1.0",
+  "project": "go-twilio-examples",
+  "repository": "https://github.com/grokify/go-twilio-examples",
+  "versioning": "semver",
+  "commitConvention": "conventional",
+  "maintainers": [
+    "grokify",
+    "johncwang@gmail.com"
+  ],
+  "releases": [
+    {
+      "version": "v0.2.0",
+      "date": "2026-10-20",
+      "highlights": [
+        {
+          "description": "MkDocs documentation site with a user guide for each example, replacing the stale per-example READMEs"
+        },
+        {
+          "description": "`media-streams` no longer hardcodes its public WebSocket host; set `BASE_URL_WSS` instead"
+        }
+      ],
+      "added": [
+        {
+          "description": "MkDocs site (`mkdocs.yml`, `docs/`) with guides for appointment-reminders, outbound-call and media-streams"
+        },
+        {
+          "description": "Release notes under `docs/releases/`"
+        },
+        {
+          "description": "`outbound-call/README.md` pointing to its guide"
+        }
+      ],
+      "changed": [
+        {
+          "description": "`media-streams` reads its WebSocket base URL from the required `BASE_URL_WSS` environment variable and uses it for both the `<Stream>` URL and the service router"
+        },
+        {
+          "description": "Root and per-example READMEs rewritten to match the current layout, with corrected paths and run instructions"
+        },
+        {
+          "description": "`processResponse` in appointment-reminders controllers no longer takes an unused request parameter"
+        },
+        {
+          "description": "Standard CI workflow names (`go-ci`, `go-lint`, `go-sast-codeql`) and updated `.golangci.yaml`"
+        },
+        {
+          "description": "Minimum Go version is now 1.26"
+        }
+      ],
+      "removed": [
+        {
+          "description": "Unused `msg` field from `GatherEvent`"
+        }
+      ],
+      "fixed": [
+        {
+          "description": "appointment-reminders: set `ReadHeaderTimeout` on the HTTP server",
+          "commit": "1089560"
+        }
+      ],
+      "breaking": [
+        {
+          "description": "`media-streams` exits at startup unless `BASE_URL_WSS` is set; the previous hardcoded host was removed"
+        },
+        {
+          "description": "`GatherEvent.msg` field removed"
+        }
+      ],
+      "dependencies": [
+        {
+          "description": "Bump `github.com/grokify/goauth` from 0.21.0 to 0.25.0"
+        },
+        {
+          "description": "Bump `github.com/grokify/mogo` from 0.63.11 to 0.75.0"
+        },
+        {
+          "description": "Bump `github.com/rs/zerolog` from 1.32.0 to 1.35.1"
+        },
+        {
+          "description": "Bump `github.com/gorilla/websocket` from 1.5.1 to 1.5.3"
+        },
+        {
+          "description": "Bump `github.com/google/go-querystring` from 1.1.0 to 1.2.0"
+        }
+      ]
+    },
+    {
+      "version": "v0.1.0",
+      "date": "2021-03-21",
+      "commit": "dfc9229",
+      "highlights": [
+        {
+          "description": "Twilio Media Streams example: receive call audio over a WebSocket and save it to file"
+        }
+      ],
+      "added": [
+        {
+          "description": "Media Streams demo that serves `<Start><Stream>` TwiML and handles the WebSocket audio stream",
+          "commit": "ae7cec6"
+        },
+        {
+          "description": "`StreamMessage` types for Media Streams WebSocket events",
+          "commit": "a49efa6"
+        },
+        {
+          "description": "GitHub Actions CI",
+          "commit": "62fb278"
+        }
+      ],
+      "changed": [
+        {
+          "description": "Logging moved from logrus to zerolog",
+          "commit": "4cf6a36"
+        },
+        {
+          "description": "Common files moved to the repository root so examples share one package",
+          "commit": "2ac756a"
+        },
+        {
+          "description": "Removed cron schedule from GitHub Actions workflow",
+          "commit": "dfc9229"
+        }
+      ],
+      "dependencies": [
+        {
+          "description": "Dependency updates",
+          "commit": "7e0dcc4"
+        }
+      ]
+    }
+  ]
+}
