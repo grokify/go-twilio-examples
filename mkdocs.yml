@@ -1,0 +1,19 @@
+site_name: Twilio Examples in Go
+site_description: Example Twilio voice applications in Go
+site_url: https://grokify.github.io/go-twilio-examples
+repo_url: https://github.com/grokify/go-twilio-examples
+repo_name: grokify/go-twilio-examples
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Appointment Reminders: guides/appointment-reminders.md
+      - Outbound Call: guides/outbound-call.md
+      - Media Streams: guides/media-streams.md
