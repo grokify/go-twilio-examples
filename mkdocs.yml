@@ -17,3 +17,6 @@ nav:
       - Appointment Reminders: guides/appointment-reminders.md
       - Outbound Call: guides/outbound-call.md
       - Media Streams: guides/media-streams.md
+  - Release Notes:
+      - v0.2.0: releases/v0.2.0.md
+      - v0.1.0: releases/v0.1.0.md
