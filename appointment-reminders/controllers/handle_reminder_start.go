@@ -36,10 +36,10 @@ func HandleReminderStart() func(http.ResponseWriter, *http.Request) {
 			res.Add(&twiml.Say{
 				Language: "en",
 				Text: fmt.Sprintf("Hello, you have an appointment coming up on Wednesday %s %s",
-					nextWed.Month(), month.DayofmonthToEnglish(uint16(nextWed.Day()))),
+					nextWed.Month(), month.DayofmonthToEnglish(uint16(nextWed.Day()))), //nolint:gosec // G115: day of month is 1-31
 			})
 			addMainMenu(res, uint16(0))
-			processResponse(w, r, res)
+			processResponse(w, res)
 		// Call is ringing but has not been connected yet, tell Twilio to continue
 		case twiml.Ringing:
 			w.WriteHeader(200)
