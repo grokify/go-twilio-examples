@@ -4,6 +4,7 @@
 [![Go Lint][go-lint-svg]][go-lint-url]
 [![Go SAST][go-sast-svg]][go-sast-url]
 [![Docs][docs-godoc-svg]][docs-godoc-url]
+[![Docs][docs-mkdoc-svg]][docs-mkdoc-url]
 [![Visualization][viz-svg]][viz-url]
 [![License][license-svg]][license-url]
 
@@ -24,4 +25,42 @@
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
  [license-url]: https://github.com/grokify/go-twilio-examples/blob/main/LICENSE
 
-Various pieces of example code using Twilio.
+Example code for building Twilio voice applications in Go: TwiML-driven call flows, outbound calls via the REST API, and real-time audio via Media Streams.
+
+## Examples
+
+Full guides are in [`docs/`](docs/index.md) (MkDocs site).
+
+| Directory | Description |
+|-----------|-------------|
+| [`appointment-reminders`](docs/guides/appointment-reminders.md) | TwiML server that speaks a reminder and handles keypad input. |
+| [`outbound-call`](docs/guides/outbound-call.md) | CLI that places a call via the Twilio Calls API. |
+| [`media-streams`](docs/guides/media-streams.md) | Receives live call audio over a WebSocket and saves `.ulaw`/`.wav`. |
+
+The root package holds shared helpers (Calls API, TwiML verbs, stream message types); see the [docs home](docs/index.md).
+
+## Quick Start
+
+Your server must be reachable by Twilio, so use a tunnel such as [ngrok](https://ngrok.com/):
+
+```bash
+# Terminal 1: run the appointment reminder server
+go run ./appointment-reminders
+
+# Terminal 2: expose it
+ngrok http 8081
+
+# Terminal 3: place a call (set TWILIO_DEMO_CALLBACKURL to https://<ngrok-host>/reminder_start)
+cd outbound-call && cp .env.sample .env  # then edit .env
+go run .
+```
+
+## Notes
+
+- `media-streams` requires `BASE_URL_WSS` (e.g. `wss://<your-host>.ngrok.io`).
+- Requires Go 1.26 or later.
+- Never commit your `.env` file; it holds your Twilio credentials.
+
+## License
+
+[MIT](LICENSE)
