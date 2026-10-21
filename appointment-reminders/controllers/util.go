@@ -37,7 +37,7 @@ func addMainMenu(res *twiml.Response, numTries uint16) {
 	)
 }
 
-func processResponse(w http.ResponseWriter, r *http.Request, res *twiml.Response) {
+func processResponse(w http.ResponseWriter, res *twiml.Response) {
 	// Validate and encode the response.  Validation is done
 	// automatically before the response is encoded.
 	b, err := res.Encode()

@@ -51,17 +51,17 @@ func HandleReminderProcess() func(http.ResponseWriter, *http.Request) {
 			res.Add(&twiml.Say{
 				Language: "en",
 				Text:     "Thank you for confirming. We will see you then. Good bye."})
-			processResponse(w, r, res)
+			processResponse(w, res)
 		case "2":
 			res.Add(&twiml.Say{
 				Language: "en",
 				Text:     "Our office will call you back to reschedule. Good bye."})
-			processResponse(w, r, res)
+			processResponse(w, res)
 		case "3":
 			res.Add(&twiml.Say{
 				Language: "en",
 				Text:     "We will note the cancellation. Please call us again when are you can book another appointment. Good bye."})
-			processResponse(w, r, res)
+			processResponse(w, res)
 		default:
 			if numTries > AppRetryLimit {
 				res.Add(
@@ -69,13 +69,13 @@ func HandleReminderProcess() func(http.ResponseWriter, *http.Request) {
 						Language: "en",
 						Text:     "You have reached the maximum number of retries allowed. Please hang up and call our office if you have any questions on your appointment."},
 					&twiml.Hangup{})
-				processResponse(w, r, res)
+				processResponse(w, res)
 			} else {
 				res.Add(&twiml.Say{
 					Language: "en",
 					Text:     "I did not understand that. Please try again."})
 				addMainMenu(res, uint16(numTries+1))
-				processResponse(w, r, res)
+				processResponse(w, res)
 			}
 		}
 	}

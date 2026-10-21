@@ -38,10 +38,10 @@ func HandleReminderMenu() func(http.ResponseWriter, *http.Request) {
 					Language: "en",
 					Text:     "If you would like to change your appointment, please call our offices. Good bye."},
 				&twiml.Hangup{})
-			processResponse(w, r, res)
+			processResponse(w, res)
 		} else {
 			addMainMenu(res, uint16(numTries+1))
-			processResponse(w, r, res)
+			processResponse(w, res)
 		}
 	}
 }
