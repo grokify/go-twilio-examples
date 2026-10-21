@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/grokify/go-twilio-examples/appointment-reminders/controllers"
 )
@@ -22,5 +23,9 @@ func main() {
 		portStr = ":" + port
 	}
 	fmt.Printf("Running on [%v]\n", portStr)
-	log.Fatal(http.ListenAndServe(portStr, nil))
+	srv := &http.Server{
+		Addr:              portStr,
+		ReadHeaderTimeout: 10 * time.Second,
+	}
+	log.Fatal(srv.ListenAndServe())
 }
